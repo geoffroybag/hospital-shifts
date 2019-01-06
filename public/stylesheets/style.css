@@ -1,0 +1,64 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("https://picsum.photos/g/1000/700");
+  background-size: cover;
+  color: white; }
+
+a {
+  color: white;
+  text-decoration: none;
+  margin-right: 30px; }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: darkcyan;
+  color: white;
+  text-align: center;
+  font-size: 1.5em; }
+
+label {
+  display: block;
+  margin: 10px; }
+
+.home-page {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin: auto 0;
+  color: white;
+  font-size: 3em;
+  padding-top: 100px; }
+
+.home-page h1 {
+  letter-spacing: 10px;
+  font-weight: lighter; }
+
+.home-page p {
+  display: inline; }
+
+.error-message {
+  border: 3px solid;
+  border-radius: 3px;
+  color: #c20a0a;
+  padding: 10px;
+  background-color: white;
+  width: 30%;
+  font-size: 1.5em; }
+
+.success-message {
+  border: 3px solid;
+  border-radius: 3px;
+  color: grey;
+  padding: 10px;
+  background-color: white;
+  width: 30%;
+  font-size: 1.5em; }
+
+.hideLog {
+  display: none !important; }
+
+/*# sourceMappingURL=style.css.map */
