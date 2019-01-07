@@ -1,0 +1,9 @@
+<form method="POST" action="/worker/{{worker._id}}/edit" class="row">
+    <input type="text" name="first_name" value={{worker.first_name}} class="form-control col">
+    <select name="status" default={{worker.status}} class="form-control col">
+        <option value="interne">Intern</option>
+        <option value="medic">Medic</option>
+        <option value="interim">Interim</option>
+    </select>
+    <button class="btn btn-success">Save</button>
+</form>

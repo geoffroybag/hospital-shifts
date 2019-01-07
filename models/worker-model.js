@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const workerSchema = new Schema({
-  id: {type:Number},
   first_name: { type: String, required: true },
   status: {type: String, enum: ["medic", "interne", "interim"]},  
 });

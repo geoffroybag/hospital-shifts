@@ -8,7 +8,6 @@ const shiftsSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "Worker"
     },
-  planning_id: { type: Number } 
 });
 
 const Shift = mongoose.model('Shift', shiftsSchema);

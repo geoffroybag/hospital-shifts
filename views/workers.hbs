@@ -1,0 +1,38 @@
+       <div class="col-sm-12 all-workers">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr class="row">
+                        <th class="col-sm-5 table-warning">Name</th>
+                        <th class="col-sm-5 table-danger">Status</th>
+                        <th class="col-sm-2 table-info">Update worker info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#each workers}}
+                    <tr class="row">
+                        <td class="col-sm-5">{{this.first_name}}</td>
+                        <td class="col-sm-5">{{this.status}}</td>
+                        <td class="col-sm-2">
+                          <a href="/worker/{{this._id}}/edit" class="btn btn-primary btn-warning">Edit</a>
+                          <a href="/worker/{{this._id}}/delete" class="btn btn-primary btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                 {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+
+<div class = "card">
+  <h3 class ="card-header">Add a new worker</h3>
+    <form method="POST" action="/workers/add" class="worker-form">
+            <input class="form-control" type="text" name="first_name" placeholder="Name">
+            <select class="form-control" name="status" >
+                <option selected>Select status</option>
+                <option value="medic">Medic</option>
+                <option value="interne">Intern</option>
+                <option value="interim">Interim</option>
+            </select>
+        <button class="btn btn-add">Add</button>
+    </form>
+</div>

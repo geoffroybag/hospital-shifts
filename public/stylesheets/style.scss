@@ -1,71 +1,100 @@
 body {
-  padding: 50px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url("https://picsum.photos/g/1000/700");
-  background-size : cover;
-  color : white;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-  margin-right: 30px;
-}
-
-
-footer{
-  position : fixed; 
-  bottom : 0;
-  left : 0;
-  width : 100%;
-  background-color: darkcyan;
-  color : white;
   text-align: center;
-  font-size: 1.5em;
+  background-color:#f4f4f4;
+}
+nav{
+  text-align: center;
+  margin : 30px;
+}
+nav a {
+  margin : 10px;
+  color : #7c7c7b;
+  text-decoration: none;
+  font-size : 18px;
 }
 
-label{
-  display : block;
+.navigation-item{
+  margin: 5px;
+}
+
+.display{
+  display:flex;
+}
+
+.container-for-flex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.box-for-flex,
+.box-for-flex-workers{
+  border: 1px solid;
+  border-radius: 15px;
+  margin: 10px;
+  background-color: bisque;
+  flex: 0 1 18%;
+}
+
+.box-for-flex{
+  padding: 10px;
+  
+}
+
+.box-for-flex-workers{
+  padding: 20px;
+}
+
+h4{
+  font-size: 15px;
+  margin: 0 20px;
+}
+
+.all-workers{
+  display : flex;
+  flex-direction: column;
+}
+.worker-card{
+  border : 1px solid white;
   margin : 10px;
+  padding : 10px;
+  width : 30%;
+  display : flex;
+}
+.worker-form{
+  width : 40%;
+  text-align : center;
+  margin : 20px auto;
+}
+.shift-form{
+  width : 40%;
+  text-align : center;
+  margin : 20px auto;
+}
+.btn-add{
+  background-color: #ff6742;
+  color : white;
+  margin : 15px;
+}
+.btn-primary{
+  height : 30px;
+  font-size : 13px;
+  padding: 5px;
+  margin : 0 20px;
+}
+.card-header{
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .home-page{
-  height : 100%;
-  width : 100%;
-  text-align: center;
-  margin : auto 0;
-  color : white;
-  font-size: 3em;
-  padding-top : 100px;
-}
-.home-page h1{
-  letter-spacing: 10px;
-  font-weight: lighter;
-}
-.home-page p{
-  display : inline;
-}
+  margin : -20px;
+  background-image: url("/images/hospital-img.jpg");
+  background-size: cover;
+  height : 85vh;
+  display : flex;
+  justify-content: center;
 
-.error-message{
-  border : 3px solid;
-  border-radius: 3px;
-  color : rgb(194, 10, 10);
-  padding : 10px;
-  background-color: white;
-  width : 30%;
-  font-size : 1.5em;
 }
-
-.success-message{
-  border : 3px solid;
-  border-radius: 3px;
-  color : grey;
-  padding : 10px;
-  background-color: white;
-  width : 30%;
-  font-size : 1.5em;
-}
-
-.hideLog {
-  display: none!important;
- }

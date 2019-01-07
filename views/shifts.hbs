@@ -1,0 +1,48 @@
+<div class="col-sm-12 all-shifts">
+  <table class="table">
+      <thead class="thead-dark">
+        <tr class="row">
+          <th class="col-sm-4 table-warning">Date</th>
+          <th class="col-sm-4 table-warning">Name</th>
+          <th class="col-sm-3 table-warning">Assign different worker</th>
+          <th class="col-sm-1 table-warning">Delete shift</th>
+        </tr>
+      </thead>
+      <tbody>
+    {{#each shifts}}
+        <tr class="row">
+          <td class="col-sm-4">{{dateFormat this.start_date "dddd DD/MM/YYYY"}}</td>
+          <td class="col-sm-4">{{this.user_id.first_name}}</td>
+          <td class="col-sm-3">
+            <form method="POST" action="/shift/{{this._id}}" >
+                <select name="user_id" class=" form-control">
+                    <option selected>Select worker</option>
+                    {{#each ../workers}}
+                    <option value={{this._id}}>{{this.first_name}}</option>
+                    {{/each}}
+                </select>
+                <button class="btn btn-primary">Edit</button>
+            </form>
+          </td>
+          <td class="col-sm-1">
+            <a href="/shift/delete/{{this._id}}" class="btn btn-primary btn-danger">Delete</a>
+          </td>
+        </tr>
+    {{/each}}
+      </tbody>
+</table>
+</div>
+
+<div class = "card">
+<h3 class = "card-header">Add a shift</h3>
+<form method="POST" action="/shift/add" class="shift-form">
+        <input type="date" name="start_date" class="form-control">
+        <select name="user_id" class="form-control">
+            <option selected>Select worker</option>
+            {{#each workers}}
+            <option value={{this._id}}>{{this.first_name}}</option>
+            {{/each}}
+        </select>
+    <button class="btn btn-add">Save</button>
+</form>
+</div>
