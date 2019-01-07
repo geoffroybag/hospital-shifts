@@ -19,19 +19,19 @@ router.get("/workers", (req, res, next) => {
     .catch(err=>next(err))
 });
 
-// POST to CREATE a worker document in the DB
-router.post("/workers/add", (req, res, next) => {
-  const {first_name, status} = req.body
-  if(!first_name || !status){
-    res.redirect('/workers');
-    return;
-  }
-  Worker.create({ first_name, status })
-    .then(() => {
-      res.redirect("/workers");
-    })
-    .catch(err=>next(err))
-});
+// // POST to CREATE a worker document in the DB
+// router.post("/workers/add", (req, res, next) => {
+//   const {first_name, status} = req.body
+//   if(!first_name || !status){
+//     res.redirect('/workers');
+//     return;
+//   }
+//   Worker.create({ first_name, status })
+//     .then(() => {
+//       res.redirect("/workers");
+//     })
+//     .catch(err=>next(err))
+// });
 
 // route to get page to edit worker info
 router.get("/worker/:workerId/edit", (req, res, next) => {
