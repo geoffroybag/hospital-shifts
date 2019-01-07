@@ -4,6 +4,11 @@ body {
   text-align: center;
   background-color:#f4f4f4;
 }
+
+.table{
+  width : 60%;
+}
+
 nav{
   text-align: center;
   margin : 30px;
@@ -55,13 +60,21 @@ h4{
 .all-workers{
   display : flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.worker-card{
-  border : 1px solid white;
-  margin : 10px;
-  padding : 10px;
-  width : 30%;
+
+.all-shifts{
   display : flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  padding : 10px;
+  width : 60%;
+  display : flex;
+  margin-bottom : 30px;
 }
 .worker-form{
   width : 40%;
@@ -76,7 +89,7 @@ h4{
 .btn-add{
   background-color: #ff6742;
   color : white;
-  margin : 15px;
+  margin-top : 15px;
 }
 .btn-primary{
   height : 30px;
