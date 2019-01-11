@@ -50,10 +50,15 @@ router.get("/worker/:workerId/delete", (req, res, next) => {
   Worker.findByIdAndRemove(workerId)
     .then(data => {
       res.locals.worker = data;
-      res.redirect('/workers');
+      Shift.deleteMany({user_id : {$eq : workerId}})
+      .then(data=>{
+        res.redirect("/workers")
+      }
+      )
     })
     .catch(err=>next(err))
 });
+
 
 // POST to UPDATE worker document in DB
 router.post("/worker/:workerId/edit", (req, res, next) => {

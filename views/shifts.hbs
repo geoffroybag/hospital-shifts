@@ -16,29 +16,30 @@
   <table class="table">
       <thead class="thead-dark">
         <tr class="row">
-          <th class="col-sm-3 table-warning">Date</th>
-          <th class="col-sm-3 table-warning">Name</th>
-          <th class="col-sm-4 table-warning">Assign different worker</th>
-          <th class="col-sm-2 table-warning">Delete shift</th>
+          <th class="col-sm-4 table-warning">Date</th>
+          <th class="col-sm-5 table-warning">Worker</th>
+          <th class="col-sm-3 table-warning">Delete shift</th>
         </tr>
       </thead>
       <tbody>
     {{#each shifts}}
         <tr class="row">
-          <td class="col-sm-3">{{dateFormat this.start_date "dddd DD/MM/YYYY"}}</td>
-          <td class="col-sm-3">{{this.user_id.first_name}}</td>
-          <td class="col-sm-4">
+          <td class="col-sm-4">{{dateFormat this.start_date "dddd DD/MM/YYYY"}}</td>
+          <td class="col-sm-5">
             <form method="POST" action="/shift/{{this._id}}" >
                 <select name="user_id" class=" form-control">
-                    <option selected>Select worker</option>
                     {{#each ../workers}}
+                  {{#ifcond ../this.user_id.id this._id}}
+                    <option selected value={{this._id}}>{{this.first_name}}</option>
+                  {{else}}
                     <option value={{this._id}}>{{this.first_name}}</option>
+                  {{/ifcond}}
                     {{/each}}
                 </select>
-                <button class="btn btn-primary">Edit</button>
+                <button class="btn btn-primary btn-warning">Assign to this Worker</button>
             </form>
           </td>
-          <td class="col-sm-2">
+          <td class="col-sm-3">
             <a href="/shift/delete/{{this._id}}" class="btn btn-primary btn-danger">Delete</a>
           </td>
         </tr>
